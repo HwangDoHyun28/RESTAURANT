@@ -39,7 +39,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.1
       with:
         name: my-artifact
-        path: path/to/artifact/  # or path/to/artifact
+        path: /home/runner/work/RESTAURANT/RESTAURANT/  # or path/to/artifact
     
   
   
