@@ -40,6 +40,14 @@ jobs:
       with:
         name: my-artifact
         path: /home/runner/work/RESTAURANT/RESTAURANT/  # or path/to/artifact
-    
-  - name: Build and Tag
-  uses: JasonEtco/build-and-tag-action@v1.1.4
+        
+    #
+    - name: Github Tag Bump
+      uses: anothrNick/github-tag-action@1.53.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: false
+
+
+  
+      
