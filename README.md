@@ -1,2 +1,2 @@
 # RESTAURANT
-## How to exercise github action
+## How to use github action
