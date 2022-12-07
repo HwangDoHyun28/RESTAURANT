@@ -41,14 +41,5 @@ jobs:
         name: my-artifact
         path: /home/runner/work/RESTAURANT/RESTAURANT/  # or path/to/artifact
     
-  - name: Upload artifact and release
-        uses: nanoufo/action-upload-artifacts-and-release-assets@main
-        with:
-          path: |
-            x.txt
-            y.txt
-          upload-release-files: true
-          release-upload-url: <UPLOAD URL HERE>
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+  - name: Build and Tag
+  uses: JasonEtco/build-and-tag-action@v1.1.4
