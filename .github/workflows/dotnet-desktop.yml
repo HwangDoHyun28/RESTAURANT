@@ -32,3 +32,14 @@ jobs:
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
+      
+      
+    # 
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.1
+      with:
+        name: my-artifact
+        path: /home/runner/work/RESTAURANT/RESTAURANT/  # or path/to/artifact
+    
+  
+  
