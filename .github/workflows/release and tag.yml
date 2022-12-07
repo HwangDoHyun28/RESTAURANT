@@ -47,6 +47,19 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: false
+        
+    #
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{env.BUILD_CONFIGURATION}} ${{ github.ref }}
+        body: ${{ steps.changelog_reader.outputs.changes }}
+        draft: false
+        prerelease: false
 
 
   
