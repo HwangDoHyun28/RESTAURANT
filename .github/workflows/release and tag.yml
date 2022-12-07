@@ -40,6 +40,19 @@ jobs:
       with:
         name: my-artifact
         path: /home/runner/work/RESTAURANT/RESTAURANT/  # or path/to/artifact
+        
+    #  
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.release.tag_name }}
     
-  - name: Build and Tag
-  uses: JasonEtco/build-and-tag-action@v1.1.4
+    #
+    - name: Install deps and build
+      run: npm ci && npm run build
+    - uses: JasonEtco/build-and-tag-action@v2
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+
+  
+      
